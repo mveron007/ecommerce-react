@@ -1,3 +1,14 @@
+@media only screen and (min-width: 768px) {
+    .mainBox{
+        display: flex;
+        width: fit-content;
+    }
+
+    .mainBox div{
+        word-wrap: break-word;
+    }
+}
+
 .navbarContainer{
     background-color: #131921;
     padding: 0%;
@@ -27,4 +38,9 @@ nav li a {
 .boxAccount{
     display: flex;
     flex-wrap: wrap;
+}
+
+.rightOption{
+    display: flex;
+    width: 8rem;
 }

@@ -5,13 +5,13 @@ import Navbar from './components/Navbar';
 
 
 function App() {
-  const countryName = fetch('http://ip-api.com/json')
-    .then(function (response){
-      return response.json();
-  })
-  .then(function (payload) {
-    console.log(payload.country);
-  });
+  // const countryName = fetch('http://ip-api.com/json')
+  //   .then(function (response){
+  //     return response.json();
+  // })
+  // .then(function (payload) {
+  //   console.log(payload.country);
+  // });
   
 
   return (

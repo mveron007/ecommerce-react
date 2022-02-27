@@ -1,35 +1,45 @@
 import React from 'react'
 import '../style/Navbar.css';
 import '../App.css';
-import 'bootstrap/dist/css/bootstrap.css'
-import { Container, Row, Col } from 'react-bootstrap';
-import {BsList} from 'react-icons/bs';
+import 'bootstrap/dist/css/bootstrap.css';
+import logo from '../images/icon-dogs-brand.png';
+import { Container, Row, Col} from 'react-bootstrap';
+import {FcGlobe} from 'react-icons/fc';
+import { GrLocation } from "react-icons/gr";
 import Searchbar from './Searchbar';
 
+const style = { color: "white", fontSize: "1.5em" };
 const Navbar = (props) => {
   return (
     <div className='navbarContainer'>
         <Row className='p-3'>
-            <Col md={2}>
-                <div><a className='whiteText textD-None' href="">Brand<img src="" alt="" /></a>
+            <Col sm={2} md={2} >
+                <div className='d-flex'>
+                    <a className='whiteText textD-None me-3' href=""><img className='mb-2' src={logo} width="60px;" alt="" /></a>
                 
-                <div>
-                    <span className='whiteText textD-None'> Envios a <a href="">{props.country}</a></span></div>
+                    
+                    <div className='rightOption'>
+                        <span className='whiteText textD-None'><FcGlobe style={style}></FcGlobe> Enviar a  
+                            <a href="" className='textD-None whiteText'>
+                                <strong style={{marginLeft:"2em"}}> {props.country} </strong>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </Col>
-            <Col md={6}>
+            <Col md={6}  >
                     <Searchbar></Searchbar>
             </Col>
 
-            <Col md={4} className='d-flex justify-content-between'>
-                <div>
+            <Col sm={4} md={4} className='d-flex justify-content-between'>
+                <div className='rightOption'>
                     <a href="" className='boxAccount textD-None whiteText'>
                         <span>Hola, Identificate</span> 
                         <span> <strong>Tu Cuenta</strong> </span>
                     </a>
                 </div>
 
-                <div>
+                <div className='rightOption'>
                     <a href="" className='boxAccount textD-None whiteText'>
                        <span>Envíos</span> 
                         <span> <strong>y Devoluciones</strong></span></a>
