@@ -1,0 +1,30 @@
+.navbarContainer{
+    background-color: #131921;
+    padding: 0%;
+}
+.leftBox{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+nav li a {
+    display: block;
+    padding: .5em 1em;
+}
+
+.bg-secondGray{
+    background-color: #232F3E;
+}
+
+.boxAccount{
+    display: flex;
+    flex-wrap: wrap;
+}
