@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/Searchbar.css';
+import './Searchbar.css';
 import {BsSearch} from 'react-icons/bs';
 import { InputGroup, FormControl, Button} from 'react-bootstrap';
 

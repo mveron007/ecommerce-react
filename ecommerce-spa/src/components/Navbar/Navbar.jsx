@@ -1,12 +1,12 @@
 import React from 'react'
-import '../style/Navbar.css';
-import '../App.css';
+import './Navbar.css';
+import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import logo from '../images/icon-dogs-brand.png';
+import logo from '../../images/icon-dogs-brand.png';
 import { Container, Row, Col} from 'react-bootstrap';
 import {FcGlobe} from 'react-icons/fc';
-import { GrLocation } from "react-icons/gr";
-import Searchbar from './Searchbar';
+import Searchbar from '../Searchbar/Searchbar';
+import CartWidget from '../CartWidget/CartWidget';
 
 const style = { color: "white", fontSize: "1.5em" };
 const Navbar = (props) => {
@@ -43,6 +43,10 @@ const Navbar = (props) => {
                     <a href="" className='boxAccount textD-None whiteText'>
                        <span>Envíos</span> 
                         <span> <strong>y Devoluciones</strong></span></a>
+                </div>
+
+                <div className="rightOption">
+                    <CartWidget></CartWidget>
                 </div>
             </Col>
         </Row>

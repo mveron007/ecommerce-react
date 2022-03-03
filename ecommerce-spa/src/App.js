@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import React  from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
       <header>
         <Navbar country="Argentina"></Navbar>
       </header>
+
+      <ItemListContainer greeting="Hola, su carrito está vacío"></ItemListContainer>
+    
     </div>
   );
 }
