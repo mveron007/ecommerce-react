@@ -37,7 +37,7 @@ function App() {
       </header>
 
       <ItemListContainer greeting="Hola, su carrito está vacío"></ItemListContainer>
-    
+  
     </div>
   );
 }
