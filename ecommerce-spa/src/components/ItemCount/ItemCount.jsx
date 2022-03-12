@@ -19,7 +19,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
     const substractItem = ()=>{
-        const aux = stock - count;
+
         if (count > 0 || stock <= count) {
             document.getElementById('cartBtn').classList.remove("disabled");
             setCount(count - 1);
@@ -34,10 +34,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
 
+    const add = ()=>{
+        alert(`Cantidad agregada: ${count}`);
+    }
+
     const validateStock = ()=>{
         if (stock >= count) {
             document.getElementById('cartBtn').classList.remove("disabled");
-            onAdd();    
+            add();    
         }else{
             document.getElementById('cartBtn').classList.add("disabled");
         }

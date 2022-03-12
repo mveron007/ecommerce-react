@@ -1,18 +1,25 @@
 // import logo from './logo.svg';
 import './App.css';
-import React  from 'react';
+import React, {useEffect, useState}  from 'react';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 function App() {
-  // const countryName = fetch('http://ip-api.com/json')
-  //   .then(function (response){
-  //     return response.json();
-  // })
-  // .then(function (payload) {
-  //   console.log(payload.country);
-  // });
+  const [location, setLoc] = useState("");
+  useEffect(() => {
+    const urlCountry = 'http://ip-api.com/json';
+    const countryName = fetch(urlCountry)
+    .then(function (response){
+      return response.json();
+    })
+    .then(function (payload) {
+      setLoc(payload.city);
+    });
+  
+  }, [])
+  
+  
   
 
   return (
@@ -33,7 +40,7 @@ function App() {
         </a>
       </header> */}
       <header>
-        <Navbar country="Argentina"></Navbar>
+        <Navbar country={location}></Navbar>
       </header>
 
       <ItemListContainer greeting="Hola, su carrito está vacío"></ItemListContainer>

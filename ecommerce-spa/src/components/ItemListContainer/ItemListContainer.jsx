@@ -5,10 +5,9 @@ import { productos } from '../../helpers/productos'
 
 const ItemListContainer = (props) => {
   const onAdd = ()=>{
-        const auxValue = document.getElementById("countInput").value;
-
-        alert(`Cantidad agregada: ${auxValue}`);
-        
+        // const auxValue = document.getElementById("countInput").value;
+        // alert(`Cantidad agregada: ${auxValue}`);
+        console.log("onAdd activado");
     }
   return (
     <div>

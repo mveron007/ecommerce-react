@@ -3,10 +3,11 @@ import './Navbar.css';
 import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import logo from '../../images/icon-dogs-brand.png';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 import {FcGlobe} from 'react-icons/fc';
 import Searchbar from '../Searchbar/Searchbar';
 import CartWidget from '../CartWidget/CartWidget';
+import {BrowserRouter, Routes, Router, Navigate} from 'react-router-dom';
 
 const style = { color: "white", fontSize: "1.5em" };
 const Navbar = (props) => {

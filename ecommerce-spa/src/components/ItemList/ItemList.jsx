@@ -4,6 +4,7 @@ import { task } from '../../helpers/productos'
 
 const ItemList = ({items}) => {
   const [prods, setProds] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     task
