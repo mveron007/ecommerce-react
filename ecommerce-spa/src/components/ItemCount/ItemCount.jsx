@@ -48,7 +48,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
   return (
     <div>
-        <InputGroup className="mb-3">
+        <div className='d-flex justify-content-center'>
+        <InputGroup className="mb-2">
             <Button variant="outline-secondary" id="btnSubstract" onClick={substractItem}>
                 <GrFormSubtract></GrFormSubtract>
             </Button>
@@ -60,6 +61,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <GrFormAdd></GrFormAdd>
             </Button>
         </InputGroup>
+        </div>
 
         <Row>
             <Col>
