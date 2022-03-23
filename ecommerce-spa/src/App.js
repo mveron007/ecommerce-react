@@ -1,10 +1,19 @@
 // import logo from './logo.svg';
 import './App.css';
-import React, {useEffect, useState}  from 'react';
+import React, {useEffect, useState, lazy, Suspense} from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate
+} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
 
+const ItemListContainer = lazy(()=> import('./components/ItemListContainer/ItemListContainer'))
 
 function App() {
   const [location, setLoc] = useState("");
@@ -24,15 +33,39 @@ function App() {
   
 
   return (
-    <div className="App">
-      <header>
-        <Navbar country={location}></Navbar>
-      </header>
-        <ItemListContainer greeting="Hola, su carrito está vacío"/>
+    <Router>
+      <div className="App">
+        <header>
+          <Navbar country={location}></Navbar>
+        </header>
+        <Suspense fallback={<h1>Cargando ...</h1>} >
+          <Routes>
 
-        <ItemDetailContainer idDetail={1}/>
-     
-    </div>
+            <Route 
+              path="/category/:categoryId" 
+              element= {
+                <ItemListContainer greeting="Hola, su carrito está vacío"/>
+              }
+            />
+
+            <Route 
+              path='item/:id'
+              element= {
+                <ItemDetailContainer/>  
+              }
+            />
+
+            <Route 
+              path='/cart'
+              element={<Cart />}
+            />
+
+            <Route path='/' element={ <ItemListContainer greeting="Hola, su carrito está vacío" /> } />
+
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 

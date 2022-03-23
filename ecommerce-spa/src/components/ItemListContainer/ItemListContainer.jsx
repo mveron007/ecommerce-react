@@ -1,21 +1,39 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
+// import ItemCount from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
-import { productos } from '../../helpers/productos'
+import { task } from '../../helpers/productos'
 
 const ItemListContainer = (props) => {
-  const onAdd = ()=>{
-        // const auxValue = document.getElementById("countInput").value;
-        // alert(`Cantidad agregada: ${auxValue}`);
-        console.log("onAdd activado");
+  // const onAdd = ()=>{
+  //       console.log("onAdd activado");
+  //   }
+
+  const [prods, setProds ] = useState([])
+  const { categoryId } = useParams();
+
+  useEffect(()=> {
+    if (categoryId) {
+        task        
+        .then(resp => setProds(resp.filter(prod=> prod.category === categoryId)))
+        .catch(err => console.log(err))
+        // .finally(()=> setLoading(false))           
+    } else {
+        task        
+        .then(resp => setProds(resp))
+        .catch(err => console.log(err))
+        // .finally(()=> setLoading(false))            
     }
+}, [categoryId])
+
+
   return (
     <div>
       {props.greeting}
 
-      <ItemCount stock={3} initial={1} onAdd={onAdd}></ItemCount>
+      {/* <ItemCount stock={3} initial={1} onAdd={onAdd}></ItemCount> */}
 
-      <ItemList items={productos}></ItemList>
+      <ItemList items={prods}></ItemList>
     </div>
   )
 }

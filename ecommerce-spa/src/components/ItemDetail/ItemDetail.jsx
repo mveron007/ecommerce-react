@@ -43,7 +43,6 @@ const ItemDetail = ({item}) => {
 
             </Col>
         </Row>
-
     </div>
   )
 }

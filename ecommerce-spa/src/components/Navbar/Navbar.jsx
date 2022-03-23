@@ -3,10 +3,11 @@ import './Navbar.css';
 import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import logo from '../../images/icon-dogs-brand.png';
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col, NavDropdown} from 'react-bootstrap';
 import {FcGlobe} from 'react-icons/fc';
 import Searchbar from '../Searchbar/Searchbar';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link, NavLink } from 'react-router-dom';
 
 const style = { color: "white", fontSize: "1.5em" };
 const Navbar = (props) => {
@@ -15,7 +16,9 @@ const Navbar = (props) => {
         <Row className='p-3'>
             <Col sm={2} md={2} >
                 <div className='d-flex'>
-                    <a className='whiteText textD-None me-3' href=""><img className='mb-2' src={logo} width="60px;" alt="" /></a>
+                    <NavLink className='whiteText textD-None me-3' to="/">
+                        <img className='mb-2' src={logo} width="60px;" alt="" />
+                    </NavLink>
                 
                     
                     <div className='rightOption'>
@@ -46,7 +49,9 @@ const Navbar = (props) => {
                 </div>
 
                 <div className="rightOption">
+                <Link className='whiteText textD-None' to="/cart">
                     <CartWidget></CartWidget>
+                </Link>
                 </div>
             </Col>
         </Row>
@@ -55,6 +60,23 @@ const Navbar = (props) => {
             <Col md={8}>
             <nav>
                 <ul className='bg-secondGray'>
+                    <NavDropdown title="Categorias" id="navbarScrollingDropdown" className='whiteText textD-None'>
+                        <NavDropdown.Item >
+                            <NavLink to="category/Alimento" className="text-decoration-none">
+                                Alimento
+                            </NavLink>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <NavLink to="category/Juguetes" className="text-decoration-none">
+                                Juguetes
+                            </NavLink>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <NavLink to="category/Ropa" className="text-decoration-none">
+                                Ropa
+                            </NavLink>
+                        </NavDropdown.Item>
+                    </NavDropdown>
                     <li><a href="" className='whiteText textD-None'>Todo</a></li>
                     <li><a href="" className='whiteText textD-None'>Ofertas</a></li>
                     <li><a href="" className='whiteText textD-None'>Mas Buscados</a></li>
