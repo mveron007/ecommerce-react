@@ -44,3 +44,7 @@ nav li a {
     display: flex;
     width: 8rem;
 }
+
+.nav-link {
+    color: #fff !important;
+}
