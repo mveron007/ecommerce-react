@@ -31,6 +31,8 @@ https://nodejs.org/es/
 
 _Al levantar el proyecto se levantara en http://localhost:3000_
 
+_El proyecto se puede ver deployado en https://petshop-ecommerce-react.web.app/ _
+
 ## Construido con 🛠️
 
 _Estas dependencias externas y apis se utilizaron para crear el proyecto_
