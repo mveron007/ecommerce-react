@@ -31,7 +31,7 @@ https://nodejs.org/es/
 
 _Al levantar el proyecto se levantara en http://localhost:3000_
 
-_El proyecto se puede ver deployado en https://petshop-ecommerce-react.web.app/ _
+_El proyecto se puede ver deployado en https://petshop-ecommerce-react.web.app/_
 
 ## Construido con 🛠️
 
@@ -40,6 +40,7 @@ _Estas dependencias externas y apis se utilizaron para crear el proyecto_
 * [React Bootstrap](https://react-bootstrap.github.io/) - El framework web usado
 * [React Icons](https://react-icons.github.io/react-icons/) - Dependencia para utilizacion iconos
 * [IP API Geolocation](https://ip-api.com/) - Usado para ubicar al comprador
+* [Firebase](https://firebase.google.com/?hl=es-419) - Dependencia para deployar el proyecto
 
 ## Autor ✒️
 

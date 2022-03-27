@@ -57,9 +57,9 @@ const Navbar = (props) => {
         </Row>
 
         <Row>
-            <Col md={8}>
+            <Col md={12} className='bg-secondGray'>
             <nav>
-                <ul className='bg-secondGray'>
+                <ul>
                     <NavDropdown title="Categorias" id="navbarScrollingDropdown" className='whiteText textD-None'>
                         <NavDropdown.Item >
                             <NavLink to="category/Alimento" className="text-decoration-none">

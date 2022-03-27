@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 import './ItemCount.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {InputGroup, Button, FormControl, Row, Col} from 'react-bootstrap';
 import {GrFormAdd, GrFormSubtract} from "react-icons/gr";
 
+
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial)
+
 
     const addItem = ()=>{
         const aux = stock - count;
@@ -35,7 +38,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const add = ()=>{
-        alert(`Cantidad agregada: ${count}`);
+        onAdd(count);
     }
 
     const validateStock = ()=>{
@@ -68,6 +71,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <Button id='cartBtn' onClick={validateStock}>
                     Agregar al Carrito
                 </Button>
+
             </Col>
         </Row>
     </div>

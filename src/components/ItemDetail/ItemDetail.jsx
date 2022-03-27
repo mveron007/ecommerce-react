@@ -1,20 +1,19 @@
-import React from 'react'
-import { Row, Col} from 'react-bootstrap';
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom';
+import { Row, Col, Button} from 'react-bootstrap';
 import StarRating from '../StarRating/StarRating';
 import {FaTruck} from 'react-icons/fa';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({item}) => {
-    console.log(item);
+    const [isCount, setIsCount] = useState(false)
 
     const log = (value)=>{
         console.log(value);
     }
 
-    const onAdd = ()=>{
-        // const auxValue = document.getElementById("countInput").value;
-        // alert(`Cantidad agregada: ${auxValue}`);
-        console.log("onAdd activado");
+    const onAdd = (count)=>{
+        setIsCount(true);
     }
   return (
     <div className='m-3'>
@@ -37,9 +36,23 @@ const ItemDetail = ({item}) => {
                     <FaTruck/> Enviar a 
                 </span>
 
-                <ItemCount stock={3} initial={1} onAdd={onAdd}/>
 
-
+                {isCount ?
+                    <div className='d-flex flex-column justify-content-center'>  
+                        <Link className='mt-3' to='/' >
+                            <Button>
+                                Continuar Compra
+                            </Button>
+                        </Link>
+                        <Link className='mt-3' to='/cart'>
+                            <Button >
+                                Terminar Compra
+                            </Button>
+                        </Link>
+                    </div>
+                    :
+                    <ItemCount stock={3} initial={1} onAdd={onAdd}/>
+                }
 
             </Col>
         </Row>

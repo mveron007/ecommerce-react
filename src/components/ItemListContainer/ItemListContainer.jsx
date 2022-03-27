@@ -26,6 +26,15 @@ const ItemListContainer = (props) => {
     }
 }, [categoryId])
 
+  // useEffect(()=>{
+  //   const db = getFirestoreApp();
+
+  //   const queryDoc = doc(db, 'products','8CwXbwJeqETJ185LRtWL');
+
+  //   getDoc(queryDoc)
+  //   .then(resp => console.log(resp));
+  // })
+
 
   return (
     <div>
