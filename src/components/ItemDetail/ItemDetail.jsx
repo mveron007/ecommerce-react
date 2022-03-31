@@ -1,20 +1,27 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom';
 import { Row, Col, Button} from 'react-bootstrap';
+import { useCartContext } from '../../context/CartContext';
 import StarRating from '../StarRating/StarRating';
 import {FaTruck} from 'react-icons/fa';
 import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({item}) => {
-    const [isCount, setIsCount] = useState(false)
+    const [isCount, setIsCount] = useState(false);
+    const { addToCart } = useCartContext();
 
     const log = (value)=>{
         console.log(value);
     }
 
     const onAdd = (count)=>{
+        console.log(`ITEMMM: ${item} & ${count}`);
+        const qty = count;
+        addToCart(item, qty)
         setIsCount(true);
     }
+
+    console.log(useCartContext());
   return (
     <div className='m-3'>
         <Row>

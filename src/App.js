@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 // import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { CartProvider } from './context/CartContext';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 
@@ -34,6 +35,8 @@ function App() {
 
   return (
     <Router>
+
+      <CartProvider>
       <div className="App">
         <header>
           <Navbar country={location}></Navbar>
@@ -65,6 +68,7 @@ function App() {
           </Routes>
         </Suspense>
       </div>
+      </CartProvider>
     </Router>
   );
 }
