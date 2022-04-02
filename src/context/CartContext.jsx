@@ -38,12 +38,30 @@ export const CartProvider = ({children}) =>{
         setProductList([])
     }
 
+    const isEmpty = () =>{
+        console.log(productList.length);
+        return productList.length === 0 ? true : false; 
+    }
+
     const isInCart = (id)=>{
         return productList.includes(prod => prod.id === id);
     }
 
+
+    const totalBill = () => {
+        return productList.reduce((acum, prod) => acum = acum + (prod.price * prod.quantity), 0);
+    };
+
+    const totalQty = () =>{
+        return productList.reduce((acum, prod) => acum = acum += prod.quantity, 0);
+    }
+
+
     return <CartContext.Provider value={{
+            isEmpty,
             productList,
+            totalBill,
+            totalQty,
             addToCart,
             remove,
             clear

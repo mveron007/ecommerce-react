@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import { task } from '../../helpers/productos'
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   // const onAdd = ()=>{
   //       console.log("onAdd activado");
   //   }
@@ -38,8 +38,6 @@ const ItemListContainer = (props) => {
 
   return (
     <div>
-      {props.greeting}
-
       {/* <ItemCount stock={3} initial={1} onAdd={onAdd}></ItemCount> */}
 
       <ItemList items={prods}></ItemList>

@@ -47,7 +47,7 @@ function App() {
             <Route 
               path="/category/:categoryId" 
               element= {
-                <ItemListContainer greeting="Hola, su carrito está vacío"/>
+                <ItemListContainer/>
               }
             />
 
