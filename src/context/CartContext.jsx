@@ -17,7 +17,7 @@ export const CartProvider = ({children}) =>{
                 category: item.category, 
                 title: item.title, 
                 price: item.price, 
-                pictureUrl: item.pictureUrl, 
+                pictureUrl: item.image, 
                 quantity: qty} ] )
         }
     }

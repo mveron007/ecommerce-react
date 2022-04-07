@@ -67,8 +67,8 @@ const Navbar = (props) => {
                             </NavLink>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                            <NavLink to="category/Juguetes" className="text-decoration-none">
-                                Juguetes
+                            <NavLink to="category/Juguete" className="text-decoration-none">
+                                Juguete
                             </NavLink>
                         </NavDropdown.Item>
                         <NavDropdown.Item>

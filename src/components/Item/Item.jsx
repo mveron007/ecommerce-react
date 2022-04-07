@@ -7,7 +7,7 @@ const Item = ({item}) => {
     <Link to={`item/${item.id}`} className="text-decoration-none">
       <div>
         <Card style={{ width: '18rem' }} className="text-dark">
-          <Card.Img variant="top" src={item.pictureUrl} />
+          <Card.Img variant="top" src={item.image} />
           <Card.Body>
             <Card.Title>{item.title}</Card.Title>
             <Card.Text>

@@ -19,7 +19,7 @@ const ItemListContainer = lazy(()=> import('./components/ItemListContainer/ItemL
 function App() {
   const [location, setLoc] = useState("");
   useEffect(() => {
-    const urlCountry = 'http://ip-api.com/json';
+    const urlCountry = 'https://ip-api.com/json';
     const countryName = fetch(urlCountry)
     .then(function (response){
       return response.json();

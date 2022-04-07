@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { productos } from '../../helpers/productos'
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { doc, getFirestore, getDoc} from 'firebase/firestore/lite';
 
 const ItemDetailContainer = () => {
 
@@ -9,19 +10,23 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
   
     useEffect(() => {
-    const getElementById =
-        new Promise((resolve, reject)=>{
-        let aux = true;
-        if (aux) {
-          setTimeout(()=>{
-            setProd(productos.find(element => element.id === parseInt(id)));
-            console.log(prod.title);
-            resolve(prod);
-          }, 2000);
-        }else{
-          reject('400 - not found');
+
+      async function getElementById(){
+
+        try {
+          const db = getFirestore();
+          const item = doc(db, 'products', id);
+      
+          const response = await getDoc(item);
+          setProd({id: response.id, ...response.data()});
+        
+        } catch (error) {
+          
         }
-      });
+        
+      }
+
+      getElementById();
     })
   return (
     <div>

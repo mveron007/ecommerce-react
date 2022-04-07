@@ -22,12 +22,12 @@ const ItemDetail = ({item}) => {
         setIsCount(true);
     }
 
-    console.log(useCartContext());
+    // console.log(useCartContext());
   return (
     <div className='m-3'>
         <Row>
             <Col md={4}>
-                <img src={item.pictureUrl} alt={item.title} className="w-75 p-3" />
+                <img src={item.image} alt={item.title} className="w-75 p-3" />
             </Col>
 
             <Col md={4}>
