@@ -31,7 +31,7 @@ https://nodejs.org/es/
 
 _Al levantar el proyecto se levantara en http://localhost:3000_
 
-<!-- _El proyecto se puede ver deployado en https://petshop-ecommerce-react.web.app/_ -->
+_El proyecto se puede ver deployado en https://bruf-petshop.web.app/_
 
 ## Construido con 🛠️
 
