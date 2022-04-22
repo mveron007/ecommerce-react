@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
+import Loading from '../Loading/Loading';
 import { getFirestore, collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore/lite';
 
 const ItemListContainer = () => {
-
-  const [prods, setProds ] = useState([])
+  const [ loading, setLoading ] = useState(true);
+  const [prods, setProds ] = useState([]);
   const { categoryId } = useParams();
 
   useEffect(()=>{
     async function getAll(){
 
-      
         const db = getFirestore();
 
         const itemCollection = collection(db, 'products');
@@ -36,7 +36,13 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      <ItemList items={prods}></ItemList>
+      {
+        loading 
+        ? 
+        <Loading/> 
+        :
+        <ItemList items={prods} />
+      }
     </div>
   )
 }

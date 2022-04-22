@@ -3,6 +3,8 @@ import Item from '../Item/Item';
 
 const ItemList = ({items}) => {
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {});
   
   return (
     <div className='d-flex flex-wrap justify-content-center'>

@@ -15,14 +15,11 @@ const ItemDetail = ({item}) => {
     }
 
     const onAdd = (count)=>{
-        console.log("------------");
-        console.log(item);
         const qty = count;
         addToCart(item, qty)
         setIsCount(true);
     }
 
-    // console.log(useCartContext());
   return (
     <div className='m-3'>
         <Row>
@@ -59,7 +56,10 @@ const ItemDetail = ({item}) => {
                         </Link>
                     </div>
                     :
-                    <ItemCount stock={3} initial={1} onAdd={onAdd}/>
+                    <div>
+                        <ItemCount stock={3} initial={1} onAdd={onAdd}/>
+                    </div>
+                    
                 }
 
             </Col>

@@ -11,7 +11,6 @@ export const CartProvider = ({children}) =>{
 
     const addToCart=(item, qty)=>{
         if (!isInCart(item.id)) {
-            console.info(`EXTRA: ${qty}`)
             setProductList( [ ...productList, {
                 id:uuidv4(), 
                 category: item.category, 
@@ -23,11 +22,9 @@ export const CartProvider = ({children}) =>{
     }
 
     const remove = (itemId)=>{
-        console.log(itemId);
         if (itemId) {
             const auxArray = productList.filter(prod=> prod.id !== itemId);
             setProductList(auxArray);
-            console.log(`Remove done: ${productList}` );   
         }else{
             console.error("Error");
         }
@@ -36,11 +33,6 @@ export const CartProvider = ({children}) =>{
     
     const clear= () =>{
         setProductList([])
-    }
-
-    const isEmpty = () =>{
-        console.log(productList.length);
-        return productList.length === 0 ? true : false; 
     }
 
     const isInCart = (id)=>{
@@ -58,7 +50,6 @@ export const CartProvider = ({children}) =>{
 
 
     return <CartContext.Provider value={{
-            isEmpty,
             productList,
             totalBill,
             totalQty,

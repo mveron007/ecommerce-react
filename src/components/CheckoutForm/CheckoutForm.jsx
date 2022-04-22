@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Form, Button} from 'react-bootstrap';
 
 const CheckoutForm = ({paymentOrder}) => {
+    const [emailCheck, setEmailCheck] = useState("");
     const [dataForm, setDataForm] = useState({
         email: '', name: '', phone: ''
       })
@@ -14,13 +15,28 @@ const CheckoutForm = ({paymentOrder}) => {
       })
     }
 
+    const compareEmailChange = () =>{
+        return emailCheck === dataForm.email ? true : false;
+    }
+
     const payment = (e) =>{
         e.preventDefault();
         paymentOrder(dataForm);
     }
 
-
-    console.log(dataForm)
+    const validateForm = () =>{
+        const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        const testEmail = regEx.test(emailCheck);
+        if(dataForm.email.trim().length === 0 || 
+        dataForm.name.trim().length === 0 || 
+        dataForm.phone.trim().length === 0 || 
+        !compareEmailChange() ||
+        !testEmail){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
   return (
     <div>
@@ -46,8 +62,16 @@ const CheckoutForm = ({paymentOrder}) => {
                 
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Submit
+            <Form.Group className="mb-3">
+                <Form.Label>Repetir Email</Form.Label>
+                <Form.Control type="email" name='emailCheck' placeholder="name@example.com"
+                    onChange={(e)=>setEmailCheck(e.target.value)}
+            />
+                
+            </Form.Group>
+
+            <Button id="checkoutBtn" variant="primary" type="submit" className={`${!validateForm() ? 'disabled' : ''}`}>
+                Realizar Compra
             </Button>
 
         </Form>

@@ -20,8 +20,16 @@ const ItemCart = ({item}) => {
             </Col>
 
             <Col md={2}>
-              <span>Precio</span>
-              <span className='fw-bold'>${item.price}</span>
+              <div>
+                <span>Precio</span>
+                <span className='fw-bold'>${item.price}</span>
+              </div>
+
+              <div>
+                <span>Cantidad: </span>
+                <span className='fw-bold'>{item.quantity}</span>
+              </div>
+              
             </Col>
           </Row>
         

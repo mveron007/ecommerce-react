@@ -1,15 +1,11 @@
-// import logo from './logo.svg';
 import './App.css';
 import React, {useEffect, useState, lazy, Suspense} from 'react';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link,
-  Navigate
+  Route
 } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { CartProvider } from './context/CartContext';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
@@ -52,7 +48,7 @@ function App() {
             />
 
             <Route 
-              path='item/:id'
+              path='/item/:id'
               element= {
                 <ItemDetailContainer/>  
               }
