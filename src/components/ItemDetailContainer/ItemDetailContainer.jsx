@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
       }
 
       getElementById();
-    })
+    }, [])
   return (
     <div>
         <ItemDetail item={prod}/>

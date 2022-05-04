@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBtsNW1I6nDHDBQ7-eOle3cdvvVIXdFyJQ",
-  authDomain: "bruf-petshop.firebaseapp.com",
-  projectId: "bruf-petshop",
-  storageBucket: "bruf-petshop.appspot.com",
-  messagingSenderId: "237108226793",
-  appId: "1:237108226793:web:d116524032ec5ea8e89e78"
+  apiKey: "AIzaSyBhggRyAv41q34Qr0smL5Wa78mjvv6X-mI",
+  authDomain: "brufood-pet.firebaseapp.com",
+  projectId: "brufood-pet",
+  storageBucket: "brufood-pet.appspot.com",
+  messagingSenderId: "519726973484",
+  appId: "1:519726973484:web:952f997e8ea4d891710789"
 };
 
 // Initialize Firebase

@@ -21,17 +21,18 @@ const ItemListContainer = () => {
           const resp = await getDocs(categoryFilter);
 
           setProds(resp.docs.map( prod => ({id: prod.id, ...prod.data()})));
-          // setLoading(false);
+          console.log(`Productos ${prods}`);
+          setLoading(false);
         }else{
           const resp = await getDocs(itemCollection, orderBy("categoryId"), limit(20));
           setProds(resp.docs.map( prod => ({id: prod.id, ...prod.data()})));
-          // setLoading(false);
+          setLoading(false);
         }  
       
     }
 
     getAll();
-  })
+  }, [categoryId])
 
 
   return (
