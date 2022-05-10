@@ -37,10 +37,11 @@ _El proyecto se puede ver deployado en https://brufood-pet.web.app_
 
 _Estas dependencias externas y apis se utilizaron para crear el proyecto_
 
-* [React Bootstrap](https://react-bootstrap.github.io/) - El framework web usado
-* [React Icons](https://react-icons.github.io/react-icons/) - Dependencia para utilizacion iconos
+* [React Bootstrap 2.1.2](https://react-bootstrap.github.io/) - El framework web usado
+* [React Icons 4.3.1](https://react-icons.github.io/react-icons/) - Dependencia para utilizacion iconos
 * [IP API Geolocation](https://ip-api.com/) - Usado para ubicar al comprador
-* [Firebase](https://firebase.google.com/?hl=es-419) - Dependencia para deployar el proyecto
+* [Firebase 9.6.10](https://firebase.google.com/?hl=es-419) - Dependencia para deployar el proyecto
+* [UUID 8.3.2](https://github.com/uuidjs/uuid) - Usado para generar id automático en cada producto de la lista
 
 ## Autor ✒️
 
